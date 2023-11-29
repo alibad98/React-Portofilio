@@ -14,10 +14,23 @@
 
 - The number of projects in the "main" sectin is dynamically build based on the number of objects in the `myProjects.js` file.
 
+- The project contains multiple sections
+  - Header
+  - Hero
+  - Main
+  - Contact
+  - Footer
+all of which can be modified in ./src/components/section/file
+`./src/component/1-header/Header.jsx` for example.
+
 
 you can run the project by typing the fpllowing in your command prompt
-```npm install```
-```npm run dev```
+```
+npm install
+```
+```
+npm run dev
+```
 
 
 ## sources used in the project, credits
