@@ -36,7 +36,7 @@ npm run dev
 ## sources used in the project, credits
 - [Formspree](https://formspree.io/forms/)
 - [icnmoon](https://icomoon.io/app/#/select/font)
-- [Lttie react](https://lottiereact.com/)
+- [Lottie react](https://lottiereact.com/)
 
 ### Author's name 
 #### Ali Badawi.
