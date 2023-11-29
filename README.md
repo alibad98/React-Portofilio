@@ -16,15 +16,15 @@
 
 
 you can run the project by typing the fpllowing in your command prompt
-`npm install`
-`npm run dev`
+```npm install```
+```npm run dev```
 
 
 ## sources used in the project, credits
 - [Formspree](https://formspree.io/forms/)
 - [icnmoon](https://icomoon.io/app/#/select/font)
 - [Lttie react](https://lottiereact.com/)
-- 
+
 ### Author's name 
 #### Ali Badawi.
 
