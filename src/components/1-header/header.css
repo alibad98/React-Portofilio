@@ -8,45 +8,41 @@
         4-Media Query(responsive design)
 */
 
-
-
 /* ======================================
             Header Design       
 ========================================*/
 header.flex {
-    justify-content: space-between;
-    padding: 0 2.4rem;
-    margin-top: 1.2rem;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+  margin-top: 1.2rem;
 }
 
 header.flex nav {
-    background-color: var(--bgHeader);
-    padding: .77rem 1.6rem;
-    border-radius: 55px;
-    box-shadow: 1px 1px 40px #3f3d3d68;
-
+  background-color: var(--bgHeader);
+  padding: 0.77rem 1.6rem;
+  border-radius: 55px;
+  box-shadow: 1px 1px 40px #3f3d3d68;
 }
 
 header ul.flex {
-    gap: 16px;
+  gap: 16px;
 }
 
-
 header ul li a {
-    color: var(--title);
-    opacity: .9;
-    font-size: .88rem;
-    font-weight: 500;
+  color: var(--title);
+  opacity: 0.9;
+  font-size: 0.88rem;
+  font-weight: 500;
 }
 
 header ul li a:hover {
-    color: var(--blue);
-    opacity: 1;
-    font-size: .9rem;
+  color: var(--blue);
+  opacity: 1;
+  font-size: 0.9rem;
 }
 
 header button {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 /* ======================================
@@ -55,115 +51,119 @@ header button {
 
 header .icon-menu,
 header button.mode {
-    background-color: var(--bgHeader);
-    height: 2.4rem;
-    width: 2.4rem;
-    border-radius: 50%;
-    color: var(--subtitle);
-    justify-content: center;
-    text-align: center;
-    border: 1px solid rgba(225, 135, 57, 0.292);
-    transition: .2s;
-
+  background-color: var(--bgHeader);
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  color: var(--subtitle);
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(225, 135, 57, 0.292);
+  transition: 0.2s;
+  box-shadow: 1px 1px 40px #3f3d3d68;
+}
+.light header button.mode {
+  color: rgb(226, 169, 64);
+  box-shadow: 1px 1px 40px #89858568;
+}
+.light header button.mode:hover {
+  color: orange;
+}
+.light header .icon-menu {
+  box-shadow: 1px 1px 40px #89858568;
 }
 
 header .icon-menu:hover,
 header button.mode:hover {
-    color: var(--title);
-    border: 1px solid rgba(225, 135, 57, 0.753);
-    scale: 1.05;
-
+  color: var(--title);
+  border: 1px solid rgba(225, 135, 57, 0.753);
+  scale: 1.05;
 }
 
 header .icon-close {
-    color: var(--subtitle);
-    font-size: 1.3rem;
-    transition: .3s;
-
+  color: var(--subtitle);
+  font-size: 1.3rem;
+  transition: 0.3s;
 }
 
 header .icon-close:hover {
-    font-size: 1.4rem;
-    color: crimson;
-    rotate: 180deg;
+  font-size: 1.4rem;
+  color: crimson;
+  rotate: 180deg;
 }
-
 
 /* ======================================
             Pop-Up Menu        
 ========================================*/
 
 header .fixed {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    background-color: rgba(26, 26, 37, 0.88);
-    backdrop-filter: blur(4px);
-
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgba(26, 26, 37, 0.88);
+  backdrop-filter: blur(4px);
 }
 
 header .fixed ul.popUp {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    background-color: var(--secondary);
-    animation: mymove .7s 1;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--secondary);
+  animation: mymove 0.7s 1;
 }
 
 @keyframes mymove {
-    0% {
-        scale: 0;
-    }
+  0% {
+    scale: 0;
+  }
 
-    60% {
-        scale: 1.2;
-    }
+  60% {
+    scale: 1.2;
+  }
 
-    100% {
-        scale: 1;
-    }
-
+  100% {
+    scale: 1;
+  }
 }
 
 header .fixed ul.popUp li {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.77rem;
-    padding-top: .5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.77rem;
+  padding-top: 0.5rem;
 }
 
 header .fixed ul.popUp li:last-child {
-    border: none;
+  border: none;
 }
 
 header .fixed ul.popUp li:first-child {
-    border: none;
-    text-align: right;
-    padding-bottom: 0;
-    padding-top: .2rem;
-    margin-bottom: -1.5rem;
-
+  border: none;
+  text-align: right;
+  padding-bottom: 0;
+  padding-top: 0.2rem;
+  margin-bottom: -1.5rem;
 }
 
 header .fixed ul.popUp li a {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 header button.menu {
-    display: none;
+  display: none;
 }
 
 /* ======================================
             Mediia Query       
 ========================================*/
 @media (max-width: 700px) {
-    header.flex nav {
-        display: none;
-    }
+  header.flex nav {
+    display: none;
+  }
 
-    header button.menu {
-        display: block;
-    }
+  header button.menu {
+    display: block;
+  }
 }

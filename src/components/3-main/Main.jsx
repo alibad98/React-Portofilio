@@ -1,40 +1,107 @@
-import './main.css'
+import { useState } from "react";
+import "./main.css";
+import { myProjects } from "./myProjects";
+import { AnimatePresence, motion } from "framer-motion";
+
 export default function Main() {
+  const [active, setActive] = useState("all");
+  const [arr, setArr] = useState(myProjects);
+  const showCategory = (selectedCat) => {
+    const newArr = myProjects.filter((item) => {
+      const cats = item.category.find((myItem) => {
+        return myItem === selectedCat;
+      });
+      return cats === selectedCat;
+    });
+    setArr(newArr);
+  };
   return (
-    <main className='flex'>
-      <div className=' flex section-left'>
-        <button className='active'>All Projects</button>
-        <button>Django</button>
-        <button>React</button>
-        <button>Odoo</button>
-        <button>Other</button>
+    <main className="flex">
+      <div className=" flex section-left">
+        <button
+          onClick={() => {
+            setActive("all");
+            setArr(myProjects);
+          }}
+          className={active === "all" ? "active" : null}
+        >
+          All Projects
+        </button>
+        <button
+          onClick={() => {
+            setActive("django");
+            showCategory("django");
+          }}
+          className={active === "django" ? "active" : null}
+        >
+          Django
+        </button>
+        <button
+          onClick={() => {
+            setActive("react");
+            showCategory("react");
+          }}
+          className={active === "react" ? "active" : null}
+        >
+          React
+        </button>
+        <button
+          onClick={() => {
+            setActive("odoo");
+            showCategory("odoo");
+          }}
+          className={active === "odoo" ? "active" : null}
+        >
+          Odoo
+        </button>
+        <button
+          onClick={() => {
+            setActive("other");
+            showCategory("other");
+          }}
+          className={active === "other" ? "active" : null}
+        >
+          Other
+        </button>
       </div>
-      <div className='flex section-right'>
+      <div className="flex section-right">
+        <AnimatePresence>
+          {arr.map((item) => {
+            return (
+              <motion.article
+                layout
+                initial={{ transform: "scale(0)" }}
+                animate={{ transform: "scale(1)" }}
+                transition={{ damping: 14, type: "spring", stiffness: 100 }}
+                key={item.projectTitle}
+                className="card"
+              >
+                <img width={266} src={item.img} alt="" />
 
-        {['a', 'b', 'c', 3, 4].map((item) => { 
-          return (
-            <article key={item} className='card'>
-          <img width={266} src="./page.jpg" alt="" />
-          <div style={{width:"266px"}} className='box'>
-            <h1 className='title'>Landing Page</h1>
-            <p className='sub-title'>This is just a test paragraph and it is not by any meaning perminant yall,
-            and I need more ctent so imma just say fuck israel.</p>
-            <div className='flex icons'>
-              <div style={{gap:'11px'}} className='flex'>
-                <a href="sssss" className="icon-link"></a>
-                <a href="sssssss" className="icon-github"></a>
-              </div>
-              <a className='link flex' href="sssss">
-                more
-                <span style={{alignSelf: "end"}} className='icon-arrow-right'></span>
-              </a>
-            </div>
-          </div>
-        </article>
-          )
-        })}
+                <div style={{ width: "266px" }} className="box">
+                  <h1 className="title">{item.projectTitle}</h1>
+                  <p className="sub-title">{item.paragraph}</p>
 
+                  <div className="flex icons">
+                    <div style={{ gap: "11px" }} className="flex">
+                      <a href="sssss" className="icon-link"></a>
+                      <a href="sssssss" className="icon-github"></a>
+                    </div>
+
+                    <a className="link flex" href="sssss">
+                      more
+                      <span
+                        style={{ alignSelf: "end" }}
+                        className="icon-arrow-right"
+                      ></span>
+                    </a>
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
+        </AnimatePresence>
       </div>
     </main>
-  )
+  );
 }
